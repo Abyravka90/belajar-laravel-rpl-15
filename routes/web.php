@@ -21,7 +21,9 @@ Route::get('/', function () {
 Route::get('/', function () {
     return view('public.post.index');
 });
-
+Route::get('post/1/detail', function () {
+    return view('public.post.detail');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
