@@ -11,12 +11,14 @@
     <title>Belajar - Laravel</title>
     
     @include('includes.public.style')
-
     
   </head>
   <body>
     
+    @yield('custom-style')
+
     @include('includes.public.header')
+
 
 <main>
 

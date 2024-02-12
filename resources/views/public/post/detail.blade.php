@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
 
 @section('content')
-    <h2>Ini Adalah File Detail</h2>
+    <h2>Hello World</h2>
 @endsection
