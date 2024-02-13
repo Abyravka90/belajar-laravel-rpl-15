@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\AboutController;
+
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*
+    FRONTEND
+*/
+
 Route::get('/', function () {
     return view('public.post.index');
 })->name('post.index');
@@ -22,6 +27,17 @@ Route::get('post/1/detail', function () {
     return view('public.post.detail');
 })->name('post.detail');
 
+/*
+    AUTHENTICATION
+*/
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+/*
+ BACKEND
+*/
+
+Route::get('post.create', 'PostController@create')->name('post.create');
+Route::post('post.store', 'PostController@store')->name('post.store');
+
+// Route::get('/post', [PostController::class, 'index'])->name('post');
+Route::get('home', 'HomeController@index')->name('home');
