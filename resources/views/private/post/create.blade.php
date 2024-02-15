@@ -9,7 +9,12 @@
                 @csrf
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" id="title" class="form-control" name="title">
+                    <input type="text" id="title" class="form-control @error('title')
+                        is-invalid
+                    @enderror" name="title">
+                    @error('title')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="category">Category</label>
@@ -25,7 +30,12 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea name="description" id="description" cols="30" rows="5"  class="form-control"></textarea>
+                    <textarea name="description" id="description" cols="30" rows="5"  class="form-control @error('description')
+                        is -invalid
+                    @enderror"></textarea>
+                    @error('description')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
                 <button type="submit" class="btn btn-primary float-right mt-2">Create</button>
             </form>
